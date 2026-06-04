@@ -104,6 +104,13 @@ Part of the **SuperInstance** ternary computing ecosystem:
 - [`ternary-fuzzy`](https://crates.io/crates/ternary-fuzzy) — fuzzy logic with ternary membership
 - [`ternary-circuit`](https://crates.io/crates/ternary-circuit) — ternary logic gates and circuits
 
+## Known Limitations
+
+- **Fixed-point precision loss**: Q16.16 fixed-point arithmetic (i32 with 16 fractional bits) loses precision on multiplication and division compared to native f64. Large intermediate values can overflow the i32 range during multiply/divide operations that cast through i64.
+- **Ternary projection discards information**: Projecting continuous Kalman estimates onto {-1, 0, +1} throws away magnitude information. A state estimate of 0.99 and 0.01 both project to `Zero`, losing the meaningful confidence difference.
+- **Dense covariance storage**: The covariance matrix uses `Vec<Vec<f64>>` which is O(n²) in memory — not suitable for high-dimensional state spaces.
+- **No numerical stability safeguards**: No square-root form or Joseph-form update; may exhibit numerical drift over many iterations.
+
 ## License
 
 MIT
