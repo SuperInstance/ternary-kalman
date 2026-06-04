@@ -1,0 +1,6 @@
+[package]
+name = "ternary-kalman"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Kalman filter adapted for ternary state spaces with fixed-point math"
