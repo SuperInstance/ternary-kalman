@@ -111,6 +111,15 @@ Part of the **SuperInstance** ternary computing ecosystem:
 - **Dense covariance storage**: The covariance matrix uses `Vec<Vec<f64>>` which is O(n²) in memory — not suitable for high-dimensional state spaces.
 - **No numerical stability safeguards**: No square-root form or Joseph-form update; may exhibit numerical drift over many iterations.
 
+## See Also
+
+- **ternary-bayesian** — Bayesian inference with ternary priors and evidence
+- **ternary-sensor** — Sensor classification and fusion for ternary systems
+- **ternary-predict** — Prediction and forecasting in ternary state spaces
+- **ternary-control** — Ternary PID and bang-bang controllers
+- **ternary-robotics** — Robotics control with ternary actuator commands
+- **ternary-oracle** — Oracle and prediction market primitives
+
 ## License
 
 MIT
